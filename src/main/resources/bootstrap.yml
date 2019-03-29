@@ -1,0 +1,16 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8760/eureka/
+      
+spring:
+  application:
+    name: eureka-client
+  cloud:
+    config:
+      name: application
+      profile: uat
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: config-server

@@ -15,15 +15,17 @@ public class TestRest {
 
 	@Value("${server.port}")
 	private String port;
-	
+
+	@Value("${config.val}")
+	private String configVal;
 	/**
 	 * 
 	 */
-	@GetMapping(value = "client/{value}", produces = { "application/json"})
+	@GetMapping(value = "client/{value}", produces = { "application/json" })
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public String testFunction(@PathVariable(value = "value", required = true) String value) {
 
-		return port + " : 測試EurekaCleint --> " + value;
+		return port + ", Config: " + configVal + " : 測試EurekaCleint --> " + value;
 	}
 }
