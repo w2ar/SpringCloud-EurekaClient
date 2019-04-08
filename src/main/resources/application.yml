@@ -3,4 +3,14 @@ server:
 
 logging:
   level:
-    org.springframework.cloud.gateway: debug 
+    org.springframework.cloud.gateway: debug
+
+spring:
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411
